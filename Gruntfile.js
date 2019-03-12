@@ -1,21 +1,18 @@
 module.exports = function (grunt) {
   grunt.initConfig({
-        concat: { 
-          options:{
-            separator:';',
-          },
-       dist: {
-          src: ['rectangle.js', 'calc.js'],
-          dest: 'dist/bundle.js',
-      
-      },
-    
+        imagemin: {                               
+          files: {
+             expand: true,
+             src: ['images/*.{png,jpg,gif}'],
+             dest: 'dist/'
+                                       
+             }
+       }
                 
-  }
   });
 
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-      grunt.registerTask('default', ['concat']);    
+      grunt.registerTask('default', ['imagemin']);    
 
 };
